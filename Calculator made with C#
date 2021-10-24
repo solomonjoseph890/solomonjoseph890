@@ -1,0 +1,94 @@
+using System;
+
+namespace Joseph
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to your calculator, what would you like to do today? ");
+            Console.WriteLine("Please choose from addition, subtraction, division and multiplication ");
+            string Operatorchoosen = Console.ReadLine();
+
+            if (Operatorchoosen == "addition")
+            {
+                Addition();
+            } else if (Operatorchoosen == "subtraction") 
+            {
+                Subtraction();
+            } else if (Operatorchoosen == "division") 
+            {
+                Division();
+            } else if (Operatorchoosen == "multiplication") 
+            {
+                Multiplication();
+            } else 
+            {
+                Console.WriteLine("Error!!! Invalid Operatorchoosen");
+            }
+
+        }
+
+        static double Addition()  
+        {
+                Console.WriteLine("What is your first number? ");
+                double Firstnum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("What is your second number? ");
+                double Secondnum = Convert.ToDouble(Console.ReadLine());
+
+                double Total = Firstnum + Secondnum;
+
+                Console.WriteLine("Your number is: ");
+                Console.WriteLine(Total);
+
+                return Total;
+        }
+
+        static double  Subtraction() 
+        {
+                Console.WriteLine("What is your first number? ");
+                double Firstnum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("What is your second number? ");
+                double Secondnum = Convert.ToDouble(Console.ReadLine());
+
+                double Total = Firstnum - Secondnum;
+
+                Console.WriteLine("Your number is: ");
+                Console.WriteLine(Total);
+
+                return Total;
+                
+        }
+
+        static double Division() 
+        {
+                Console.WriteLine("What is your first number? ");
+                double Firstnum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("What is your second number? ");
+                double Secondnum = Convert.ToDouble(Console.ReadLine());
+
+                double Total = Firstnum / Secondnum;
+
+                Console.WriteLine("Your number is: ");
+                Console.WriteLine(Total);
+
+                return Total;
+        }
+
+        static double  Multiplication() 
+        {
+                Console.WriteLine("What is your first number? ");
+                double Firstnum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("What is your second number? ");
+                double Secondnum = Convert.ToDouble(Console.ReadLine());
+
+                double Total = Firstnum * Secondnum;
+
+                Console.WriteLine("Your number is: ");
+                Console.WriteLine(Total);
+
+                return Total;
+        }
+    }
+}    
+
