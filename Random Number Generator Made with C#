@@ -1,0 +1,44 @@
+using System;
+
+class Program 
+{
+  public static void Main (string[] args) 
+ {    
+   int numtoguess;
+   int chances = 5;
+
+   Random random = new Random();
+   numtoguess = random.Next(1, 10);
+
+
+   for(int i = 0; i < chances; chances--)
+   {
+
+
+     Console.WriteLine("Pls choose a number between 1 and 10");
+     int numberguessed = Convert.ToInt32(Console.ReadLine());
+
+     
+     if(numberguessed == numtoguess)
+     {
+       Console.WriteLine($"Welldone the number to guess was {numtoguess} and the number u guessed was {numberguessed}");
+     }
+     else if(numberguessed != numtoguess)
+     {
+       Console.WriteLine($"You have not guess the right number u have {chances} chance left");
+     }
+     else
+     {
+
+     }
+
+    if(chances == 0)
+    {
+      break;
+    }
+
+
+   }
+ }
+
+}
