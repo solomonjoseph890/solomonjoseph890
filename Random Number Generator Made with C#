@@ -6,17 +6,22 @@ class Program
  {    
    int numtoguess;
    int chances = 4;
-
+  //making a Random class to use its methods
    Random random = new Random();
+   // randomises the number to guess between 1 and 10
    numtoguess = random.Next(1, 10);
+   
 
-
+  // looping till chances = 0
    for(int i = 0; i < chances; chances--)
    {
 
 
      Console.WriteLine("Pls choose a number between 1 and 10");
      int numberguessed = Convert.ToInt32(Console.ReadLine());
+     Console.WriteLine("...");
+     //waits 1 seconds before moving on
+     System.Threading.Thread.Sleep(1000);
 
      
      if(numberguessed == numtoguess)
@@ -35,6 +40,8 @@ class Program
 
     if(chances == 0)
     {
+      Console.WriteLine("You have ran out of chances");
+      //exits the loop
       break;
     }
 
