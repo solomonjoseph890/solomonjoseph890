@@ -1,0 +1,45 @@
+ using UnityEngine;
+
+public class Health : MonoBehaviour
+{
+    [SerializeField] private float startingHealth;
+    public float currentHealth { get; private set; }
+    private bool dead;
+
+    private void Awake()
+    {
+        currentHealth = startingHealth;
+
+    }
+    public void TakeDamage(float _damage)
+    {
+        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+
+        if (currentHealth > 0)
+        {
+
+        }
+        else
+        {
+            if (!dead)
+            {
+                //Deactivate all attached component classes
+                /*foreach (Behaviour component in components)
+                    component.enabled = false; */
+
+                GetComponent<PlayerMovement>().enabled = false;
+                dead = true;
+            }
+        }
+    }
+        //Respawn
+    public void Respawn()
+    {   dead = false;
+   
+
+        //Activate all attached component classes
+         foreach (Behaviour component in components) {
+            component.enabled = true;
+        } 
+    }
+}
